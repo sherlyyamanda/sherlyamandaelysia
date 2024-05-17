@@ -1,3 +1,4 @@
+
 <div class="row">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -24,7 +25,7 @@
                         <tr>
                             <th>Pelanggan</th>
                             <th>:</th>
-                            <td>{{ $data->Pelanggan->nama}}</td>
+                            <td>{{ $data->pelanggan->nama}}</td>
                         </tr>
                         <tr>
                             <th>Tanggal</th>
@@ -44,7 +45,7 @@
 
         <div class="col-lg-6 ps-3">
             <div class="card">
-                <div class="card-header">Produk </div>
+                <div class="card-header">produk</div>
                 <div class="card-body">
                     <form wire:submit.prevent="store" method="POST">
 
@@ -53,10 +54,10 @@
                             <input type="hidden" name="transaksi_id" wire:model="transaksi_id" value="{{ $data->id }}">
 
                             <div class="form-group">
-                                <label for="produk_id">Produk</label>
+                                <label for="produk_id">produk</label>
                                 <select class="form-control" wire:model="produk_id" name="produk_id">
-                                    <option hidden>--Pilih Produk--</option>
-                                    @foreach($dataProduk as $dt )
+                                    <option hidden>--Pilih produk--</option>
+                                    @foreach($databbitas $dt )
                                     <option value="{{ $dt->id }}">{{ $dt->nama }}</option>
                                     @endforeach
                                 </select>
@@ -92,7 +93,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Produk</th>
+                                <th>Nama produk</th>
                                 <th>Harga</th>
                                 <th>Jumlah</th>
                                 <th>Sub Total</th>
@@ -101,7 +102,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($datadetil_transaksi as $dt)
+                            @foreach($datatransaksi as $dt)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $dt->produk->nama }}</td>
@@ -136,7 +137,7 @@
                                     :
                             </th>
                             <th>
-                            <input type="number" class="mt-2" wire:model.live="uang">
+                            <input type="number" class="mt-2" wire:model="uang">
                             </th>
                         </tr>
                         <tr>
@@ -152,11 +153,10 @@
                         </tr>
                     </table>
                    
-                    <button class="btn btn-lg btn-success" wire:click="receipt({{ $data->id }})">
-                        <i class="fas fa-print"></i>  Cetak</button>
+                    <button class="btn btn-lg btn-success"><i class="fas fa-print"></i>Cetak</button>
                  
                 </div>
             </div>
         </div>
-    </div>
+</div>
 </div>

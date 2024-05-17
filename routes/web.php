@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CetakController;
+
 
 
 /*
@@ -33,7 +35,7 @@ Route::get('penjualan',function(){
 
 Route::get('transaksi',function(){
     return view('penjualan.transaksis',[
-        "title"=>"transaksi"
+        "title"=>"Transaksi"
     ]);
 })->middleware('auth');
 
