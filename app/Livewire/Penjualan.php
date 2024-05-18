@@ -11,7 +11,8 @@ class Penjualan extends Component
     public $pelanggan_id;
     public function render()
     {
-        return view('Livewire.Penjualan',['data'=>pelanggan::orderBy('id','desc')->get()
+        return view('Livewire.Penjualan',
+        ['data'=>pelanggan::orderBy('id','desc')->get()
     ]);
     }
 
