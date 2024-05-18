@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Transaksi;
+use App\Models\transaksi;
 use App\Models\detil_transaksi;
 use App\Models\produk;
 use Exception;

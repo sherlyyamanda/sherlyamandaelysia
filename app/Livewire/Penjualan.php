@@ -22,7 +22,7 @@ class Penjualan extends Component
             'pelanggan_id'=>'required'
         ]);
          
-        transaksis::create([
+        transaksi::create([
             'invoice'=>$this->invoice(),
             'pelanggan_id'=>$this->pelanggan_id,
             'user_id'=>Auth::user()->id,
