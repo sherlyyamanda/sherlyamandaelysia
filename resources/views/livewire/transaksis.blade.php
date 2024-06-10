@@ -1,4 +1,3 @@
-
 <div class="row">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -45,19 +44,19 @@
 
         <div class="col-lg-6 ps-3">
             <div class="card">
-                <div class="card-header">produk</div>
+                <div class="card-header">produk </div>
                 <div class="card-body">
-                    <form wire:submit.prevent="store" method="POST">
+                    <form wire:submit.livewire="store" method="POST">
 
                         @csrf
                         <div class=" card-body">
-                            <input type="hidden" name="transaksi_id" wire:model="transaksi_id" value="{{ $data->id }}">
+                            <input type="hidden" name="transaksi_id" wire:model.live="transaksi_id" value="{{ $data->id }}">
 
                             <div class="form-group">
                                 <label for="produk_id">produk</label>
-                                <select class="form-control" wire:model="produk_id" name="produk_id">
-                                    <option hidden>--Pilih produk--</option>
-                                    @foreach($databbitas $dt )
+                                <select class="form-control" wire:model.live="produk_id" name="produk_id">
+                                    <option hidden>--Pilih produk-</option>
+                                    @foreach($dataproduk as $dt )
                                     <option value="{{ $dt->id }}">{{ $dt->nama }}</option>
                                     @endforeach
                                 </select>
@@ -65,8 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="qty">Jumlah</label>
-                                <input type="number" class="form-control" wire:model="qty" name="qty">
-
+                                <input type="number" class="form-control" wire:model.live="qty" name="qty">
 
                             </div>
 
@@ -80,7 +78,6 @@
                 </div>
             </div>
 
-
         </div>
 
     </div>
@@ -93,16 +90,16 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama produk</th>
-                                <th>Harga</th>
+                                <th>Nama Produk</th>
+                                <th>Price</th>
                                 <th>Jumlah</th>
-                                <th>Sub Total</th>
+                                <th>Total</th>
                                 <th>Hapus</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($datatransaksi as $dt)
+                            @foreach($datadetiltransaksi as $dt)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $dt->produk->nama }}</td>
@@ -134,10 +131,10 @@
                                 <h2>Uang</h2>
                             </th>
                             <th>
-                                    :
+                            :
                             </th>
                             <th>
-                            <input type="number" class="mt-2" wire:model="uang">
+                            <input type="number" class="mt-2" wire:model.live ="uang">
                             </th>
                         </tr>
                         <tr>
@@ -153,10 +150,12 @@
                         </tr>
                     </table>
                    
-                    <button class="btn btn-lg btn-success"><i class="fas fa-print"></i>Cetak</button>
+                    <button class="btn btn-lg btn-success" wire:click="receipt({{$data->id}})"><i 
+                    class="fas fa-print"></i>  Cetak</button>
                  
                 </div>
             </div>
         </div>
+    </div>
 </div>
-</div>
+

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\HasMany;
 class Pelanggan extends Model
 {
     use HasFactory;
-    protected $fillable=['nama','hp','address'];
+    protected $fillable=['nama','hp','alamat'];
 
     public function order():HasMany
     {

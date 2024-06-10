@@ -36,7 +36,7 @@ href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
  <td>{{ $loop->iteration }}</td>
  <td>{{ $dt->nama }}</td>
  <td>{{ $dt->stock }}</td>
- <td>{{($dt->harga)}}</td>
+ <td>@money($dt->harga)</td>
  <td>{{ $dt->description }}</td>
  <td>
  <div class="btn-group">

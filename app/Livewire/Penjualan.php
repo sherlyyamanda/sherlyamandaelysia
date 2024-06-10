@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire;
 use App\Models\transaksi;
 use Livewire\Component;
@@ -8,12 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class Penjualan extends Component
 {
+
     public $pelanggan_id;
     public function render()
     {
-        return view('Livewire.Penjualan',
-        ['data'=>pelanggan::orderBy('id','desc')->get()
-    ]);
+        return view('livewire.penjualan',[
+            'data'=>pelanggan::orderBy('id','desc')->get()
+        ]);
     }
 
     public function store()
@@ -21,7 +21,7 @@ class Penjualan extends Component
         $this->validate([
             'pelanggan_id'=>'required'
         ]);
-         
+
         transaksi::create([
             'invoice'=>$this->invoice(),
             'pelanggan_id'=>$this->pelanggan_id,
@@ -41,5 +41,6 @@ class Penjualan extends Component
             return 'INV-'.$explode[1]+1;
         }
         return 'INV-1';
+    }
 }
-}
+

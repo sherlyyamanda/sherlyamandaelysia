@@ -118,4 +118,3 @@ toastr.warning("{{ $message}}");
   @endif
 </script>
 @endsection
-

@@ -13,9 +13,14 @@ class transaksi extends Model
 
     protected $fillable=['invoice','pelanggan_id','user_id','total'];
 
-    public function detil_transaksi():HasMany
+    public function detiltransaksi():HasMany
     {
-        return $this->hasMany(detil_transaksi::class);
+        return $this->hasMany(detiltransaksi::class);
+    }
+
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(user::class);
     }
 
     public function pelanggan():BelongsTo

@@ -13,14 +13,14 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700
  <!-- icheck bootstrap -->
  <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheckbootstrap.min.css') }}">
  <!-- Theme style -->
- <link rel="stylesheet" href="{{ ('dist/css/adminlte.min.css') }}">
+ <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 </head>
-<body class="hold-transition login-page" style="background-image: url('pakaian.jpg'); background-size: cover";>
+<body class="hold-transition login-page" style="background-image: url('dist/img/pngtree-fashion-clothes-store-background-image-clothing-artistic-vector-png-image_37154948.jpg'); background-size: cover";>
 <div class="login-box">
  <!-- /.login-logo -->
- <div class="card card-outline card-primary">
+ <div class="card card-outline card-primary" style="background: transparent; border: 2px solid rgba(255, 255, 255, .2";>
  <div class="card-header text-center">
- <h1 class="h1">Aplikasi<b>POS</b></h1>
+ <h1 class="h1"><b> TOKO PAKAIAN WANITA</b></h1>
  </div>
  <div class="card-body">
  <p class="login-box-msg">Please Login</p>

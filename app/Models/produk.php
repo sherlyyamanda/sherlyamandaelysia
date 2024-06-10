@@ -11,7 +11,7 @@ class produk extends Model
 {
     use HasFactory;
 
-    protected $fillable=['nama','stock','harga','description'];
+    protected $fillable=['id','nama','stock','harga','description'];
 
   
     public function detil_transaksi():HasMany
